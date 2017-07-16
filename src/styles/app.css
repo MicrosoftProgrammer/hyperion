@@ -1,0 +1,106 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.flip {
+  -webkit-perspective: 800;   
+          perspective: 800;
+        position: relative;
+        min-height: 350px;
+}
+.flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+          transform: rotatey(-180deg);
+}
+.flip .card {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    background-color: #fff;
+   
+}
+.flip .card .face {
+  -webkit-backface-visibility: hidden ;
+    backface-visibility: hidden ;
+        min-width: 300px;
+   z-index: 2;
+}
+.flip .card .front {
+   position: absolute;
+       min-width: 300px;
+   z-index: 1;
+}
+.flip .card .img {
+   position: relaitve;
+   z-index: 1;
+   border: 2px solid #000;
+}
+.flip .card .back {
+  -webkit-transform: rotatey(-180deg);
+          transform: rotatey(-180deg);
+}
+  .inner{margin:0px !important;}
+
+  .panel-green {
+    border: 1px solid #5cb85c !important;
+}
+
+  .panel-red {
+    border: 1px solid #d9534f !important;
+}
+
+  .panel-yellow {
+    border: 1px solid #f0ad4e !important;
+}
+
+.add-overlay{    
+  background: #f6ce95;
+  display: block;
+  height: 294px;
+}
+
+.add-overlay a{
+    display: inline-block;
+    background: yellow;
+    cursor: pointer;
+}
+
+.add-overlay:hover{
+    opacity: 0.5;
+}
+
+.add-overlay span{
+ opacity: 1;
+ font-size: 100px;
+ color: darkred;
+ top:35%;
+ right: 35%;
+ position: absolute;
+ z-index: 9;
+}
+
+.modal-body{
+  display: inline-block;
+}
