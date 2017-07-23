@@ -8,7 +8,6 @@ import MenuAggregate from '../sideBar/menuAggregate';
 import AddProjectAggregate from '../project/addProjectAggregate';
 import ViewProjectAggregate from '../project/viewProjectAggregate';
 import * as actions from '../../actions/projectActions';
-import $ from 'jquery';
 
 class ProjectContainer extends Component {
     async componentWillMount() {
@@ -23,6 +22,27 @@ class ProjectContainer extends Component {
                 </div>
             ));
         }
+
+        let loading = "";
+        if (this.props.isLoading) {
+            loading = <div className="col-lg-4">
+                <div className="flip">
+                    <div className="card1">
+                        <div className="face front">
+                            <div className="panel panel-yellow">
+                                <div className="panel-heading">
+                                    Loading Projects
+                                    </div>
+                                <div className="panel-body add-overlay">
+                                    <span className="fa fa-spin fa-spinner"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
         return (
             <div>
                 <nav className="navbar navbar-default navbar-static-top">
@@ -42,6 +62,7 @@ class ProjectContainer extends Component {
                                 <div className="col-lg-4">
                                     <AddProjectAggregate />
                                 </div>
+                                {loading}
                                 {projectComponents}
                             </div>
                         </div>

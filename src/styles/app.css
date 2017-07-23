@@ -104,3 +104,20 @@
 .modal-body{
   display: inline-block;
 }
+
+.clickcheck{
+    background-color: transparent !important;
+    border: none !important;
+    width: 65px!important;
+    text-align: center;
+    -webkit-box-shadow :none;
+}
+
+tfoot th{
+  vertical-align : middle !important;
+  text-align: center !important;
+}
+
+tfoot th a{
+  cursor: pointer;
+}

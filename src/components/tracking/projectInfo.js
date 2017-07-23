@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import '../../styles/app.css';
-import ProjectStatus from './projectStatus'
+import { numberWithCommas } from '../../utils/helper';
 
 class ProjectInfo extends Component {
     render() {
         return (
-            <div className="panel-body">
+            <div className="col-md-12">
                 <div className="form-group col-md-4">
                     <label>Project Name</label>
-                    <p className="form-control-static">Horizon Pro</p>
+                    <p className="form-control-static">{this.props.project.ProjectName}</p>
                 </div>
                 <div className="form-group col-md-4">
                     <label>Timeline</label>
-                    <p className="form-control-static">Jun 2017 - Jan 2018</p>
+                    <p className="form-control-static">{this.props.project.FromDate} - {this.props.project.ToDate}</p>
                 </div>
                 <div className="form-group col-md-4">
                     <label>Budget</label>
-                    <p className="form-control-static">10,000 USD</p>
+                    <p className="form-control-static">{numberWithCommas(this.props.project.Budget)} USD</p>
                 </div>
-                <ProjectStatus />
+
             </div>
         );
     }

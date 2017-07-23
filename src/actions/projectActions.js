@@ -14,6 +14,21 @@ function fetchProjectFailure() {
     return { type: FETCH_PROJECT_FAILURE };
 }
 
+export const UPDATE_PROJECT_REQUEST = 'UPDATE_PROJECT_REQUEST';
+function updateProjectRequest() {
+    return { type: UPDATE_PROJECT_REQUEST };
+}
+
+export const UPDATE_PROJECT_SUCCESS = 'UPDATE_PROJECT_SUCCESS';
+function updateProjectSuccess() {
+    return { type: UPDATE_PROJECT_SUCCESS };
+}
+
+export const UPDATE_PROJECT_FAILURE = 'UPDATE_PROJECT_FAILURE';
+function updateProjectFailure() {
+    return { type: UPDATE_PROJECT_FAILURE };
+}
+
 export function fetchProjects() {
     return function (dispatch) {
         dispatch(fetchProjectRequest());
@@ -21,6 +36,22 @@ export function fetchProjects() {
             dispatch(fetchProjectSuccess(projects));
         }).catch(error => {
             dispatch(fetchProjectFailure());
+        });
+    }
+}
+
+export function updateProject(token, project) {
+    return function (dispatch) {
+        dispatch(updateProjectRequest());
+        return ProjectAPI.updateProject(token, project).then((response) => {
+            if (response) {
+                dispatch(updateProjectSuccess());
+            }
+            else {
+                dispatch(updateProjectFailure());
+            }
+        }).catch(error => {
+            dispatch(updateProjectFailure());
         });
     }
 }

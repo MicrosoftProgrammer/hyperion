@@ -18,9 +18,6 @@ class MenuAggregate extends Component {
                         <li>
                             <Link to="/project"> <i className="fa fa-list fa-fw"></i> Project Management </Link>
                         </li>
-                        <li>
-                            <Link to="/tracking"> <i className="fa fa-clock-o fa-fw"></i> Fixed Bit Traking </Link>
-                        </li>
                     </ul>
                 </div>
             </div>

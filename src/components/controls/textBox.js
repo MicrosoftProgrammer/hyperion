@@ -15,6 +15,10 @@ class TextBox extends Component {
         this.setState({
             [name]: value
         });
+
+        if (typeof (this.props.onChange) === "function") {
+            this.props.onChange(name, value);
+        }
     }
 
     render() {
@@ -25,6 +29,7 @@ class TextBox extends Component {
                 placeholder={this.props.placeholder}
                 onChange={this.handleInputChange}
                 {...required}
+                value={this.props.value}
                 name={this.props.name}
                 type={this.props.type} />
         );
